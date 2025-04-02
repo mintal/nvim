@@ -19,10 +19,11 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], {noremap = true, silent = true});
 
 -- adjust font size
 vim.g.neovide_scale_factor = 1.0
+vim.opt.guifont = "Consolas:h" .. (10 * vim.g.neovide_scale_factor)
 
 function AdjustFontSize(delta)
 	vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + delta
-	vim.opt.guifont = "FiraCode Nerd Font:h" .. (10 * vim.g.neovide_scale_factor)
+	vim.opt.guifont = "Consolas:h" .. (10 * vim.g.neovide_scale_factor)
 end
 
 vim.keymap.set("n", "<C-=>", function() AdjustFontSize(0.1) end);
