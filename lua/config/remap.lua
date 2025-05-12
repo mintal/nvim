@@ -5,6 +5,19 @@ vim.cmd.colorscheme "catppuccin"
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>e", '<Cmd>Neotree toggle<CR>')
+vim.keymap.set("n", "<leader>gcf", '<Cmd>cd ~/Appdata/Local/nvim<CR>')
+-- fullscreen mode
+if vim.g.neovide == true then
+	vim.keymap.set("n", "<F11>",
+	function()
+		vim.notify("Toggling fullscreen mode")
+		if vim.g.neovide_fullscreen == false then
+			vim.g.neovide_fullscreen = true
+		else
+			vim.g.neovide_fullscreen = false
+		end
+	end, {})
+end
 
 -- telescope section
 local builtin = require('telescope.builtin')
